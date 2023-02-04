@@ -13,7 +13,7 @@
 
 
 class User < ApplicationRecord
-    # USes the password_digest column to add a password and password confirmation to our user.
+    # Uses the password_digest column to save encrypted password after verifying that password and password confirmation are the same.
     #It hashes the password so that it can be saved to the database.
     has_secure_password
 
