@@ -18,7 +18,7 @@ class User < ApplicationRecord
     has_secure_password
 
     # This checks to see if there is email input before it saves it
-    validates :email, presence: true
+    validates :email, presence: true, format: { with: /\A[^@\s]+@[^@\s]+\z/, message: "must be a valid email address"}
 end
 
 # Whenever you make changes to your model, you have to run the lines below to undo the migration and add the new instructions.
