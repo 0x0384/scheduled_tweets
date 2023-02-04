@@ -8,6 +8,10 @@ class RegistrationsController < ApplicationController
         @user = User.new(user_params) # The validation (has_secure_password, and validates) in User model is run
         # If the user was saved to the database successfully
         if @user.save
+            # You need to set a cookie to keep track of users that are logged in.
+            # That way, you can actually log the user in.
+            # session is encrypted and cannot be tampered with. Cookie is not.
+            session[:user_id] = @user.id
             redirect_to root_path, notice: "Successfully created account"
         else
             # flash[:alert] = "Something was wrong"

@@ -42,6 +42,9 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
+# Allows authentications and other restrictions to be run while still serving the result of the output from a cached copy [https://github.com/rails/actionpack-action_caching]
+gem 'actionpack-action_caching'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
