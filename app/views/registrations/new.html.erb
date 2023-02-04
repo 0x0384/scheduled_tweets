@@ -3,7 +3,15 @@
 <%# sign_up_path is the POST sign-up in routes.rb %>
 <%# The email, password, and password_confirmation symbols are pointed to User model by the controller. It (password and password_confirmation) is passed to has_secure_password method %>
 <%# Convention is creating a lot of abstraction. %>
-<%= form_with model: @user, url: sign_up_path do |form| %>
+<%= form_with model: @user, url: sign_up_path, data:{turbo:false} do |form| %>
+    <% if @user.errors.any? %>
+        <div class="alert alert-danger">
+            <% @user.errors.full_messages.each do |message| %>
+                <div> <%= message %></div>
+            <% end %>
+        </div>
+    <% end %>
+    
     <div class="mb-3">
         <%= form.label :email %>
         <%= form.text_field :email, class: "form-control", placeholder: "alabi@email.com" %>

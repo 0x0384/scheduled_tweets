@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get "faq", to: "faq#index", as: :faq
 
   get "sign_up", to: "registrations#new"
-  post "sign_up", to: "create#new"
+  post "sign_up", to: "registrations#create"
 
 
   root to: "main#index"
