@@ -4,8 +4,11 @@
 
     <%# I still need to look at this if statement. It's not rendering.%>
     <%# UPDATE: It's working now and I have no idea what I did right.%>
-    <% if @user %>
-        Logged in as: <%= @user.email %>
 
-        <%= button_to "Logout", logout_path, method: :delete %>
-    <% end %>
+
+    <%# M0ved to the navbar %>
+    <%# if Current.user %>
+      <%#  Logged in as: <%= Currentuser.email %>
+
+        <%# button_to "Logout", logout_path, method: :delete %>
+    <%# end %>
